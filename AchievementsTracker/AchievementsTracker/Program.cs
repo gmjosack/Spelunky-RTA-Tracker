@@ -50,6 +50,7 @@ namespace AchievementsTracker
 
             private MainForm form;
             private ImgForm imgForm;
+            private AsoForm asoForm;
             private SettingsForm settings;
             private Tracker tracker;
 
@@ -62,10 +63,11 @@ namespace AchievementsTracker
                 // Create forms
                 form = new MainForm(this);
                 imgForm = new ImgForm();
-                settings = new SettingsForm(this, form, imgForm);
+                asoForm = new AsoForm();
+                settings = new SettingsForm(this, form, imgForm, asoForm);
 
                 // Create tracker thread
-                tracker = new Tracker(form, imgForm);
+                tracker = new Tracker(form, imgForm, asoForm);
                 Thread trackerThread = new Thread(() => tracker.Main());
                 trackerThread.IsBackground = true;
                 trackerThread.Start();
@@ -117,6 +119,7 @@ namespace AchievementsTracker
                 // Display both forms
                 form.Show();
                 imgForm.Show();
+                asoForm.Hide();
 
                 // Set hotkey
                 Keys key = (Keys)trackerSettings.resetHotkey;
@@ -274,6 +277,8 @@ namespace AchievementsTracker
                 imgForm.ArrangeUnlockables();
                 imgForm.Show();
 
+                asoForm.Hide();
+
                 form.changeCategory(Category.AA);
             }
 
@@ -331,6 +336,8 @@ namespace AchievementsTracker
                 imgForm.changeCategory(Category.AJE);
                 imgForm.ArrangeUnlockables();
                 imgForm.Show();
+
+                asoForm.Hide();
 
                 form.changeCategory(Category.AJE);
             }
@@ -390,6 +397,8 @@ namespace AchievementsTracker
                 imgForm.ArrangeUnlockables();
                 imgForm.Show();
 
+                asoForm.Hide();
+
                 form.changeCategory(Category.AC);
             }
 
@@ -446,6 +455,8 @@ namespace AchievementsTracker
 
                 imgForm.changeCategory(Category.ASO);
                 imgForm.Hide();
+
+                asoForm.Show();
 
                 form.changeCategory(Category.ASO);
             }
@@ -504,6 +515,8 @@ namespace AchievementsTracker
                 imgForm.changeCategory(Category.Tutorial);
                 imgForm.Hide();
 
+                asoForm.Hide();
+
                 form.changeCategory(Category.Tutorial);
             }
 
@@ -523,6 +536,7 @@ namespace AchievementsTracker
             {
                 form.BackColor = color;
                 imgForm.BackColor = color;
+                asoForm.BackColor = color;
                 settings.BackColor = color;
             }
 
@@ -530,6 +544,7 @@ namespace AchievementsTracker
             {
                 form.ForeColor = color;
                 imgForm.ForeColor = color;
+                asoForm.ForeColor = color;
                 settings.ForeColor = color;
             }
 
@@ -537,6 +552,7 @@ namespace AchievementsTracker
             {
                 form.Reset();
                 imgForm.Reset();
+                asoForm.Reset();
                 tracker.Reset();
             }
 

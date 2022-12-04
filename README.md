@@ -50,10 +50,10 @@ The tracker only observes the health of Players 1 and 2 for the Good Teamwork ac
 
 ## Requirements
 
-.NET Framework 4.7.1 or higher
+.NET Framework 4.8 or higher
 
 - You probably already have this unless you run an older OS like Windows 7 and haven't updated
-- Download here if you need it: https://www.microsoft.com/net/download/dotnet-framework-runtime
+- Download here if you need it: https://dotnet.microsoft.com/en-us/download/dotnet-framework/net48
 
 ## Download
 

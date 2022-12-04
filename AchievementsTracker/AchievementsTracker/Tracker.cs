@@ -25,6 +25,7 @@ namespace AchievementsTracker
 
         private MainForm ui;
         private ImgForm unlockables;
+        private AsoForm asoForm;
         private Process spelunky;
         private GameManager gameManager;
         private bool running;
@@ -35,10 +36,11 @@ namespace AchievementsTracker
 
         private long playingStartTime;
 
-        public Tracker(MainForm form, ImgForm imgForm)
+        public Tracker(MainForm form, ImgForm imgForm, AsoForm asoForm)
         {
             ui = form;
             unlockables = imgForm;
+            this.asoForm = asoForm;
 
             // create run manager
             runManager = new RunManager(this);
@@ -89,6 +91,7 @@ namespace AchievementsTracker
         public void TutorialDone(long time)
         {
             ui.FinishTutorial(time);
+            asoForm.FinishTutorial();
         }
 
         public void SpeedlunkyAchieved(long time, int plays)
@@ -290,30 +293,39 @@ namespace AchievementsTracker
             {
                 case 0:
                     ui.FinishASO1Bomb(time);
+                    asoForm.Finish1Bomb();
                     break;
                 case 1:
                     ui.FinishASO1Rope(time);
+                    asoForm.Finish1Rope();
                     break;
                 case 2:
                     ui.FinishASO10k(time);
+                    asoForm.Finish10k();
                     break;
                 case 3:
                     ui.FinishASO2Bombs(time);
+                    asoForm.Finish2Bombs();
                     break;
                 case 4:
                     ui.FinishASO2Ropes(time);
+                    asoForm.Finish2Ropes();
                     break;
                 case 5:
                     ui.FinishASOShotgun(time);
+                    asoForm.FinishShotgun();
                     break;
                 case 6:
                     ui.FinishASO3Bombs(time);
+                    asoForm.Finish3Bombs();
                     break;
                 case 7:
                     ui.FinishASO3Ropes(time);
+                    asoForm.Finish3Ropes();
                     break;
                 case 8:
                     ui.FinishASOKey(time);
+                    asoForm.FinishKey();
                     break;
             }
         }

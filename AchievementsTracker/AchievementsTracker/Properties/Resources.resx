@@ -484,4 +484,37 @@
   <data name="icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="aso_00_tutorial" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\aso\00-tutorial.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aso_01_bomb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\aso\01-bomb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aso_02_rope" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\aso\02-rope.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aso_03_10k" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\aso\03-10k.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aso_04_bomb_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\aso\04-bomb-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aso_05_rope_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\aso\05-rope-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aso_06_shotgun" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\aso\06-shotgun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aso_07_bomb_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\aso\07-bomb-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aso_08_rope_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\aso\08-rope-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aso_09_key" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\aso\09-key.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aso_10_olmec" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\aso\10-olmec.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

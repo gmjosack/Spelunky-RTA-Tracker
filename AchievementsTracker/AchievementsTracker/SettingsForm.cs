@@ -18,6 +18,7 @@ namespace AchievementsTracker
         TrayApplicationContext context;
         MainForm form;
         ImgForm imgForm;
+        AsoForm asoForm;
 
         Keys hotkey;
         int modifiers;
@@ -28,11 +29,12 @@ namespace AchievementsTracker
         bool inverted;
         bool groupByArea;
 
-        public SettingsForm(TrayApplicationContext context, MainForm form, ImgForm imgForm)
+        public SettingsForm(TrayApplicationContext context, MainForm form, ImgForm imgForm, AsoForm asoForm)
         {
             this.context = context;
             this.form = form;
             this.imgForm = imgForm;
+            this.asoForm = asoForm;
 
             InitializeComponent();
         }
