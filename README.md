@@ -14,7 +14,7 @@ _Complete all of the achievements starting from a brand new save file. The timer
 
 The AA run has been largely inaccessible until now due to the need for a fresh steam account as well as a tedious death grind. This tracker removes the need for a fresh steam account and provides an option to avoid unnecessary death grinding by extrapolating the time you would finish the run.
 
-<img src="https://github.com/spelunky-fyi/Spelunky-RTA-Tracker/blob/master/tracker-windows-update.PNG">
+<img src="https://raw.githubusercontent.com/spelunky-fyi/Spelunky-RTA-Tracker/main/tracker-windows-update.PNG">
 
 ## Achievements
 
