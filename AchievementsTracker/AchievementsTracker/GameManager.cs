@@ -195,16 +195,20 @@ namespace AchievementsTracker
             int newCharSelect = memoryReader.ReadCharSelect();
             if (state == ScreenState.ChooseCharacter && charSelect == 0 && newCharSelect != 0)
             {
-                if (characters == 0)
+                if (characters > 0)
+                {
+                    tracker.SetErrorMessage("Characters unlocked greater than 0...");
+                }
+                else if (plays > 0)
+                {
+                    tracker.SetErrorMessage("Plays greater than 0...");
+                }
+                else
                 {
                     // Start timer
                     Log.WriteLine("Character selected!");
                     tracker.RunStarted(time, false);
                     tracker.SendRunStart(time);
-                }
-                else
-                {
-                    tracker.SetErrorMessage("Characters Unexpectedly Unlocked!");
                 }
             }
             charSelect = newCharSelect;
@@ -284,8 +288,8 @@ namespace AchievementsTracker
             if (newPlays != plays && newPlays > 0 && newPlays <= 1000 && newPlays > plays)
             {
                 tracker.PlaysEvent(newPlays, time);
-                plays = newPlays;
             }
+            plays = newPlays;
 
             // Tunnel man progress
             tunnelManChapter = memoryReader.ReadTunnelChapter();
