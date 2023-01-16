@@ -80,7 +80,7 @@ namespace AchievementsTracker
             UnregisterHotKey(Handle, RESET_HOTKEY_ID);
             RegisterHotKey(Handle, RESET_HOTKEY_ID, modifiers, (int)key);
         }
-        
+
         // Hotkey
         protected override void WndProc(ref Message m)
         {
@@ -96,11 +96,12 @@ namespace AchievementsTracker
         {
             room.Text = "";
             roomStatus.Text = "";
+            errorMsg.Text = "";
 
             SetHideLoadless(false);
 
             startTime = 0;
-            
+
             // Init timer
             if (runTimer != null)
             {
@@ -251,12 +252,18 @@ namespace AchievementsTracker
             currentlyPlaying = false;
         }
 
+        public void SetErrorMessage(string msg)
+        {
+            errorMsg.Text = msg;
+        }
+
         public void setRoomCode(string code)
         {
             if (code != null)
             {
                 room.Text = "Room: " + code;
-            } else
+            }
+            else
             {
                 room.Text = "";
             }
@@ -940,7 +947,8 @@ namespace AchievementsTracker
             {
                 loadlessTimer.Hide();
                 loadlessLabel.Hide();
-            } else
+            }
+            else
             {
                 loadlessTimer.Show();
                 loadlessLabel.Show();

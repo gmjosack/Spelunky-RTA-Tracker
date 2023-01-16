@@ -53,6 +53,7 @@
             this.ExtrapolatedTimeStatus = new System.Windows.Forms.Label();
             this.ASOStatus = new System.Windows.Forms.Label();
             this.ASO = new System.Windows.Forms.Label();
+            this.errorMsg = new System.Windows.Forms.Label();
             this.Tutorial = new System.Windows.Forms.Label();
             this.TutorialStatus = new System.Windows.Forms.Label();
             this.aso1Bomb = new System.Windows.Forms.Label();
@@ -314,6 +315,18 @@
             this.ASO.Size = new System.Drawing.Size(46, 15);
             this.ASO.TabIndex = 25;
             this.ASO.Text = "AS+O:";
+            // 
+            // Error Message
+            // 
+            this.errorMsg.AutoSize = true;
+            this.errorMsg.Location = new System.Drawing.Point(12, 32);
+            this.errorMsg.ForeColor = System.Drawing.Color.Red;
+            this.errorMsg.Name = "ErrorMessage";
+            this.errorMsg.Size = new System.Drawing.Size(38, 13);
+            this.errorMsg.TabIndex = 51;
+            this.errorMsg.Text = "";
+
+
             // 
             // Tutorial
             // 
@@ -609,6 +622,7 @@
             this.Controls.Add(this.Tutorial);
             this.Controls.Add(this.ASO);
             this.Controls.Add(this.ASOStatus);
+            this.Controls.Add(this.errorMsg);
             this.Controls.Add(this.ExtrapolatedTimeStatus);
             this.Controls.Add(this.ExtrapolatedTime);
             this.Controls.Add(this.AddictedStatus);
@@ -670,6 +684,7 @@
         public System.Windows.Forms.Label ExtrapolatedTimeStatus;
         public System.Windows.Forms.Label ASOStatus;
         public System.Windows.Forms.Label ASO;
+        public System.Windows.Forms.Label errorMsg;
         public System.Windows.Forms.Label Tutorial;
         public System.Windows.Forms.Label TutorialStatus;
         public System.Windows.Forms.Label Addicted;

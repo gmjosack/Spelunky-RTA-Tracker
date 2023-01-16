@@ -426,7 +426,7 @@ namespace AchievementsTracker
                         byte[] charBytes = charArray.Select(jv => (byte)jv).ToArray();
                         byte[] chars = new byte[16 * 4];
                         int charNum = 0;
-                        for (int i = 0; i < 16; i ++)
+                        for (int i = 0; i < 16; i++)
                         {
                             chars[4 * i] = charBytes[i];
                             if (charBytes[i] > 0) charNum++;
@@ -494,6 +494,11 @@ namespace AchievementsTracker
                     Thread.Sleep((int)sleepTime);
                 }
             }
+        }
+
+        public void SetErrorMessage(string msg)
+        {
+            ui.SetErrorMessage(msg);
         }
 
         public void Main()

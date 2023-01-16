@@ -195,10 +195,17 @@ namespace AchievementsTracker
             int newCharSelect = memoryReader.ReadCharSelect();
             if (state == ScreenState.ChooseCharacter && charSelect == 0 && newCharSelect != 0)
             {
-                // Start timer
-                Log.WriteLine("Character selected!");
-                tracker.RunStarted(time, false);
-                tracker.SendRunStart(time);
+                if (characters == 0)
+                {
+                    // Start timer
+                    Log.WriteLine("Character selected!");
+                    tracker.RunStarted(time, false);
+                    tracker.SendRunStart(time);
+                }
+                else
+                {
+                    tracker.SetErrorMessage("Characters Unexpectedly Unlocked!");
+                }
             }
             charSelect = newCharSelect;
 
