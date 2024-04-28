@@ -5,7 +5,7 @@ namespace AchievementsTracker
     class GameManager
     {
         private Tracker tracker;
-        private MemoryReader memoryReader;
+        public MemoryReader memoryReader;
 
         private ScreenState state;
         private int charSelect;

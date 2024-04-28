@@ -13,7 +13,9 @@ namespace AchievementsTracker
 {
     class Tracker
     {
-        private const int PROCESS_WM_READ = 0x0010;
+        private const int PROCESS_VM_OPERATION = 0x0008;
+        private const int PROCESS_VM_READ = 0x0010;
+        private const int PROCESS_VM_WRITE = 0x0020;
 
         private const int DAY_IN_MS = 1000 * 60 * 60 * 24;
 
@@ -56,6 +58,10 @@ namespace AchievementsTracker
         public void Reset()
         {
             roomCode = null;
+            if (gameManager != null)
+            {
+                gameManager.memoryReader.FixSlowLook();
+            }
 
             lock (_runManagerLock)
             {
@@ -524,7 +530,7 @@ namespace AchievementsTracker
                 });
 
                 Log.WriteLine("Spelunky process detected");
-                processHandle = (int)OpenProcess(PROCESS_WM_READ, false, spelunky.Id);
+                processHandle = (int)OpenProcess(PROCESS_VM_READ | PROCESS_VM_WRITE | PROCESS_VM_OPERATION, false, spelunky.Id);
                 baseAddress = spelunky.MainModule.BaseAddress.ToInt32();
             }
             catch (Exception e)

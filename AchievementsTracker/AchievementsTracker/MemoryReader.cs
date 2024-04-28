@@ -8,6 +8,9 @@ namespace AchievementsTracker
         [DllImport("kernel32.dll")]
         public static extern bool ReadProcessMemory(int hProcess, int lpBaseAddress, byte[] lpBuffer, int dwSize, ref int lpNumberOfBytesRead);
 
+        [DllImport("kernel32.dll")]
+        public static extern bool WriteProcessMemory(int hProcess, int lpBaseAddress, byte[] lpBuffer, int nSize, ref int lpNumberOfBytesWrittent);
+
         private int[] SCREEN_STATE = { 0x15446C, 0x58 };
         private int[] PLAYER_ONE_HEALTH = { 0x15446C, 0x440694 };
         private int[] PLAYER_TWO_HEALTH = { 0x15446C, 0x441B38 };
@@ -29,6 +32,8 @@ namespace AchievementsTracker
         private int[] TUNNEL_REMAINING = { 0x15446C, 0x445BE8 };
         private int[] TUTORIAL_STATUS = { 0x15446C, 0x445BE0 };
 
+        private int[] CAMERA_SPEED = { 0x154510, 0x38 };
+
         private int processHandle;
         private int baseAddress;
 
@@ -36,6 +41,12 @@ namespace AchievementsTracker
         {
             this.processHandle = processHandle;
             this.baseAddress = baseAddress;
+        }
+
+        public void FixSlowLook()
+        {
+            byte[] buffer = BitConverter.GetBytes(1.0f);
+            WriteMemory(buffer, baseAddress, CAMERA_SPEED);
         }
 
         public int ReadTutorialStatus()
@@ -202,6 +213,28 @@ namespace AchievementsTracker
             ReadProcessMemory(processHandle, addr, buffer, buffer.Length, ref bytesRead);
 
             return buffer;
+        }
+
+        private bool WriteMemory(byte[] buffer, int addr, int[] offsets)
+        {
+            int bytesRead = 0;
+            int bytesWritten = 0;
+
+            // Buffer for next pointer
+            byte[] pointer = new byte[4];
+
+            // Traverse pointer path
+            for (int i = 0; i < offsets.Length - 1; i++)
+            {
+                addr += offsets[i];
+                ReadProcessMemory(processHandle, addr, pointer, pointer.Length, ref bytesRead);
+                addr = BitConverter.ToInt32(pointer, 0);
+            }
+
+            // Read value from final address
+            addr += offsets[offsets.Length - 1];
+
+            return WriteProcessMemory(processHandle, addr, buffer, buffer.Length, ref bytesWritten);
         }
     }
 }
